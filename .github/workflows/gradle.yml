@@ -29,15 +29,20 @@ jobs:
       - name: Build
         run: ./gradlew build
 
-      - name: Remove *-sources.jar
-        run: rm ./build/libs/*-sources.jar || true
+      #- name: Remove *-sources.jar
+      #  run: rm ./versions/1.20.4/build/devlibs/*-sources.jar || true
 
       - name: ls1
-        run: ls
+        run: ls ./versions/1.20.4/build/
+
       - name: ls2
-        run: ls ./build
+        run: ls ./versions/1.20.4/build/devlibs
+        
       - name: ls3
-        run: ls ./build/libs
+        run: ls ./versions/1.20.4/build/libs
+
+
+
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -46,4 +51,4 @@ jobs:
           prerelease: true
           title: "Latest Build"
           files: |
-            ./build/libs/*.jar
+            ./versions/1.20.4/build/libs/*.jar
