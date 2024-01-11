@@ -32,6 +32,13 @@ jobs:
       - name: Remove *-sources.jar
         run: rm ./build/libs/*-sources.jar || true
 
+      - name: ls1
+        run: ls
+      - name: ls2
+        run: ls ./build
+      - name: ls3
+        run: ls ./build/libs
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
