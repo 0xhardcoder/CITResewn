@@ -60,7 +60,7 @@ jar {
 }
 
 if (stonecutter.current().isActiveVersion()) {
-    rootProject.tasks.named('publishActive') {
+    rootProject.tasks.named('buildActive') {
         Task remapJarTask = tasks.getByName 'remapJar'
 
         dependsOn remapJarTask
